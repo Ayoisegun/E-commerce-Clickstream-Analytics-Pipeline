@@ -1,4 +1,4 @@
-CREATE TABLE products(
+CREATE TABLE IF NOT EXISTS products (
     product_id TEXT,
     product_name TEXT,
     brand TEXT,

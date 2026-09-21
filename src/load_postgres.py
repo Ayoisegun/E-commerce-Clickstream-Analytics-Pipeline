@@ -20,6 +20,10 @@ with open("src/schema.sql", "r") as f:
     sql_script = f.read()
     cursor.execute(sql_script)
 
+with open("src/product_schema.sql", "r") as f:
+    sql_script = f.read()
+    cursor.execute(sql_script)
+
 # Commit changes and close connection
 conn.commit()
 cursor.close()
