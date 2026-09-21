@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: fct_daily_sales
+    columns:
+      - name: sale_date
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_products')
+              field: product_id
+      - name: units_sold
+        tests:
+          - not_null
+      - name: revenue
+        tests:
+          - not_null
+
+  - name: fct_conversion_funnel
+    columns:
+      - name: funnel_date
+        tests:
+          - not_null
+          - unique
+      - name: sessions_with_view
+        tests:
+          - not_null
+      - name: sessions_with_cart
+        tests:
+          - not_null
+      - name: sessions_with_purchase
+        tests:
+          - not_null
+
+  - name: dim_products
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+      - name: product_name
+        tests:
+          - not_null
