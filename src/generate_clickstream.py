@@ -1,3 +1,4 @@
+import csv
 import json
 import random
 from datetime import datetime, timedelta
@@ -8,19 +9,33 @@ random.seed(42)
 
 TARGET_TOTAL_EVENTS = 100_000
 OUTPUT_FILE = "clickstream_events.json1"
+PRODUCT_CATALOG_FILE = "product_catalog.csv"
 NUM_USERS = 5000
 
-# Product Catalog with Categories
+# Product Catalog with Categories and Brands
 PRODUCTS = [
-    {"id": "P101", "name": "Wireless Mouse", "category": "Accessories", "price": 29.99},
-    {"id": "P102", "name": "Mechanical Keyboard", "category": "Accessories", "price": 89.99},
-    {"id": "P103", "name": "UltraWide Monitor", "category": "Electronics", "price": 349.99},
-    {"id": "P104", "name": "USB-C Hub", "category": "Electronics", "price": 45.50},
-    {"id": "P105", "name": "Ergonomic Chair", "category": "Furniture", "price": 199.99},
-    {"id": "P106", "name": "Standing Desk", "category": "Furniture", "price": 499.99},
+    {"id": "P101", "name": "Wireless Mouse", "brand": "LogiTech", "category": "Accessories", "price": 29.99},
+    {"id": "P102", "name": "Mechanical Keyboard", "brand": "KeyChron", "category": "Accessories", "price": 89.99},
+    {"id": "P103", "name": "UltraWide Monitor", "brand": "LG", "category": "Electronics", "price": 349.99},
+    {"id": "P104", "name": "USB-C Hub", "brand": "Anker", "category": "Electronics", "price": 45.50},
+    {"id": "P105", "name": "Ergonomic Chair", "brand": "HermanMiller", "category": "Furniture", "price": 199.99},
+    {"id": "P106", "name": "Standing Desk", "brand": "FlexiSpot", "category": "Furniture", "price": 499.99},
 ]
 
 CATEGORIES = sorted(set(p["category"] for p in PRODUCTS))
+
+def generate_product_catalog_csv(filename=PRODUCT_CATALOG_FILE):
+    """Generates the product catalog CSV file including brands."""
+    fieldnames = ["id", "name", "brand", "category", "price"]
+    try:
+        with open(filename, mode="w", newline="", encoding="utf-8") as csv_file:
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+            writer.writeheader()
+            for product in PRODUCTS:
+                writer.writerow(product)
+        print(f"Success! Generated product catalog and saved to {filename}")
+    except Exception as e:
+        print(f"An error occurred while generating the product catalog CSV: {e}")
 
 def get_user_favorite_category(user_id):
     """Deterministic favorite category based on user_id."""
@@ -140,6 +155,10 @@ def assign_timestamps(events, session_start):
     return events
 
 def main():
+    # 1. Generate product catalog CSV file
+    generate_product_catalog_csv()
+
+    # 2. Generate clickstream events
     print(f"Generating ~{TARGET_TOTAL_EVENTS:,} clickstream events...")
     
     all_events = []
