@@ -1,7 +1,76 @@
 id,name,brand,category,price
-P101,Wireless Mouse,LogiTech,Accessories,29.99
-P102,Mechanical Keyboard,KeyChron,Accessories,89.99
-P103,UltraWide Monitor,LG,Electronics,349.99
-P104,USB-C Hub,Anker,Electronics,45.5
-P105,Ergonomic Chair,HermanMiller,Furniture,199.99
-P106,Standing Desk,FlexiSpot,Furniture,499.99
+P101,LogiTech Wireless Mouse,LogiTech,Accessories,54.43
+P102,KeyChron Mechanical Keyboard,KeyChron,Accessories,19.42
+P103,Razer RGB Mousepad,Razer,Accessories,33.67
+P104,Anker USB-C Hub,Anker,Accessories,30.71
+P105,Belkin Webcam 1080p,Belkin,Accessories,59.96
+P106,LogiTech Laptop Stand,LogiTech,Accessories,56.55
+P107,KeyChron External SSD 1TB,KeyChron,Accessories,68.83
+P108,Razer Bluetooth Speaker,Razer,Accessories,22.95
+P109,Anker Wireless Mouse,Anker,Accessories,42.04
+P110,Belkin Mechanical Keyboard,Belkin,Accessories,19.69
+P111,LogiTech RGB Mousepad,LogiTech,Accessories,30.45
+P112,KeyChron USB-C Hub,KeyChron,Accessories,46.79
+P113,Razer Webcam 1080p,Razer,Accessories,19.51
+P114,Anker Laptop Stand,Anker,Accessories,29.32
+P115,Belkin External SSD 1TB,Belkin,Accessories,55.03
+P116,"LG UltraWide Monitor 34""",LG,Electronics,327.06
+P117,Dell 4K Gaming Monitor,Dell,Electronics,203.76
+P118,Samsung Noise-Canceling Headphones,Samsung,Electronics,343.9
+P119,Sony Portable Power Bank,Sony,Electronics,427.56
+P120,Apple Wireless Earbuds,Apple,Electronics,122.46
+P121,Asus Thunderbolt Dock,Asus,Electronics,426.19
+P122,LG Smart Tablet,LG,Electronics,385.27
+P123,"Dell UltraWide Monitor 34""",Dell,Electronics,249.28
+P124,Samsung 4K Gaming Monitor,Samsung,Electronics,179.07
+P125,Sony Noise-Canceling Headphones,Sony,Electronics,483.72
+P126,Apple Portable Power Bank,Apple,Electronics,247.89
+P127,Asus Wireless Earbuds,Asus,Electronics,155.24
+P128,LG Thunderbolt Dock,LG,Electronics,156.74
+P129,Dell Smart Tablet,Dell,Electronics,442.03
+P130,"Samsung UltraWide Monitor 34""",Samsung,Electronics,349.4
+P131,HermanMiller Standard Item A,HermanMiller,Furniture,533.36
+P132,FlexiSpot Standard Item B,FlexiSpot,Furniture,496.6
+P133,Steelcase Standard Item C,Steelcase,Furniture,404.69
+P134,IKEA Standard Item A,IKEA,Furniture,612.21
+P135,Autonomous Standard Item B,Autonomous,Furniture,329.79
+P136,HermanMiller Standard Item C,HermanMiller,Furniture,412.2
+P137,FlexiSpot Standard Item A,FlexiSpot,Furniture,543.95
+P138,Steelcase Standard Item B,Steelcase,Furniture,443.78
+P139,IKEA Standard Item C,IKEA,Furniture,559.29
+P140,Autonomous Standard Item A,Autonomous,Furniture,424.23
+P141,HermanMiller Standard Item B,HermanMiller,Furniture,484.65
+P142,FlexiSpot Standard Item C,FlexiSpot,Furniture,171.76
+P143,Steelcase Standard Item A,Steelcase,Furniture,258.24
+P144,IKEA Standard Item B,IKEA,Furniture,287.45
+P145,Autonomous Standard Item C,Autonomous,Furniture,187.89
+P146,Nike Running Shoes,Nike,Apparel,62.53
+P147,Adidas Compression Shirt,Adidas,Apparel,47.51
+P148,Puma Athletic Joggers,Puma,Apparel,67.68
+P149,UnderArmour Training Shorts,UnderArmour,Apparel,108.45
+P150,NewBalance Performance Hoodie,NewBalance,Apparel,77.58
+P151,Nike Gym Duffel Bag,Nike,Apparel,78.19
+P152,Adidas Running Shoes,Adidas,Apparel,59.87
+P153,Puma Compression Shirt,Puma,Apparel,66.42
+P154,UnderArmour Athletic Joggers,UnderArmour,Apparel,142.75
+P155,NewBalance Training Shorts,NewBalance,Apparel,109.86
+P156,Nike Performance Hoodie,Nike,Apparel,105.42
+P157,Adidas Gym Duffel Bag,Adidas,Apparel,55.5
+P158,Puma Running Shoes,Puma,Apparel,119.1
+P159,UnderArmour Compression Shirt,UnderArmour,Apparel,54.62
+P160,NewBalance Athletic Joggers,NewBalance,Apparel,79.24
+P161,Ninja Air Fryer XL,Ninja,Home & Kitchen,223.18
+P162,InstantPot Smart Coffee Maker,InstantPot,Home & Kitchen,163.42
+P163,Keurig Espresso Machine,Keurig,Home & Kitchen,149.22
+P164,Breville Cordless Vacuum,Breville,Home & Kitchen,171.05
+P165,Dyson Blender Pro,Dyson,Home & Kitchen,198.11
+P166,Ninja Electric Kettle,Ninja,Home & Kitchen,186.68
+P167,InstantPot Smart Air Purifier,InstantPot,Home & Kitchen,93.16
+P168,Keurig Air Fryer XL,Keurig,Home & Kitchen,59.48
+P169,Breville Smart Coffee Maker,Breville,Home & Kitchen,107.93
+P170,Dyson Espresso Machine,Dyson,Home & Kitchen,99.77
+P171,Ninja Cordless Vacuum,Ninja,Home & Kitchen,90.07
+P172,InstantPot Blender Pro,InstantPot,Home & Kitchen,215.21
+P173,Keurig Electric Kettle,Keurig,Home & Kitchen,203.84
+P174,Breville Smart Air Purifier,Breville,Home & Kitchen,107.8
+P175,Dyson Air Fryer XL,Dyson,Home & Kitchen,166.06
