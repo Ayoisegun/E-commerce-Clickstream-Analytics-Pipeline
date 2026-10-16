@@ -166,7 +166,7 @@ def generate_session(day_start_time):
         if random.random() < 0.75 and category_candidates:
             product = random.choice(category_candidates)
         else:
-            product = random.choice(OTHER_CANDIDATES if 'OTHER_CANDIDATES' in locals() else PRODUCTS)
+            product = random.choice(other_candidates if other_candidates else PRODUCTS)
             
         # Product Views (1 to 3 views per product interaction)
         for _ in range(random.randint(1, 2)):
@@ -179,7 +179,7 @@ def generate_session(day_start_time):
                 "product_name": product["name"],
                 "brand": product["brand"],
                 "category": product["category"],
-                "price": None  # Views usually don't carry transaction price in standard clickstream logs
+                "price": product["price"]
             })
         
         # Decide cart action based on profile
