@@ -4,5 +4,5 @@ sources:
   - name: raw
     schema: public
     tables:
-      - name: raw_clickstream
+      - name: cleaned_clickstream
       - name: products

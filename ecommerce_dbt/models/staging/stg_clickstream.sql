@@ -7,5 +7,6 @@ select
     product_id,
     product_name,
     category,
+    brand,
     price
-from {{ source('raw', 'raw_clickstream') }}
+from {{ source('raw', 'cleaned_clickstream') }}

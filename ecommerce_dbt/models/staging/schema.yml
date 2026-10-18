@@ -17,7 +17,7 @@ models:
         tests:
           - not_null
           - accepted_values:
-              values: ['page_view', 'product_view', 'add_to_cart', 'purchase']
+              values: ['page_view', 'product_view', 'add_to_cart', 'purchase', 'unknown_click_action']
       - name: event_timestamp
         tests:
           - not_null
