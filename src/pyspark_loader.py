@@ -13,7 +13,7 @@ PG_PROPS = {
     "password": os.getenv("PG_PASSWORD"),
     "driver": "org.postgresql.Driver",
 }
-PG_TABLE = "raw_clickstream"
+PG_TABLE = "cleaned_clickstream"
 
 spark = SparkSession.builder \
     .appName("ecommerce_anaytics") \
