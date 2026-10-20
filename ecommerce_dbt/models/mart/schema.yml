@@ -44,3 +44,32 @@ models:
       - name: product_name
         tests:
           - not_null
+  
+  - name: mart_product_performance
+    columns:
+      - name: product_id
+        data_tests:
+          - not_null
+          - unique
+      - name: product_name
+        data_tests:
+          - not_null
+      - name: revenue
+        data_tests:
+          - not_null
+
+  - name: mart_daily_traffic
+    columns:
+      - name: date
+        data_tests:
+          - not_null
+          - unique
+      - name: active_users
+        data_tests:
+          - not_null
+      - name: active_sessions
+        data_tests:
+          - not_null
+      - name: total_events
+        data_tests:
+          - not_null

@@ -13,3 +13,22 @@ models:
       - name: session_date
         tests:
           - not_null
+  - name: int_product_funnel
+    columns:
+      - name: product_id
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('stg_products')
+                field: product_id
+      - name: no_of_views
+        data_tests:
+          - not_null
+      - name: no_of_purchases
+        data_tests:
+          - not_null
+      - name: no_of_carted
+        data_tests:
+          - not_null

@@ -1,0 +1,9 @@
+.git
+my_env
+__pycache__
+*.pyc
+ecommerce_dbt/target
+ecommerce_dbt/dbt_packages
+logs
+airflow/logs
+.env
