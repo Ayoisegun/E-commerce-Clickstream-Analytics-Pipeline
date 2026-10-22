@@ -1,0 +1,34 @@
+
+services:
+  airflow:
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
+    container_name: ecommerce_airflow
+    restart: unless-stopped
+    command: standalone
+    ports:
+      - "8080:8080"
+    environment:
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__DAGS_FOLDER: /opt/airflow/dags
+      AIRFLOW__CORE__EXECUTION_API_SERVER_URL: ""
+      PG_HOST: host.docker.internal
+      PG_PORT: "${PG_PORT:-5432}"
+      PG_DB: "${PG_DB}"
+      PG_USER: "${PG_USER}"
+      PG_PASSWORD: "${PG_PASSWORD}"
+      DBT_PROFILES_DIR: /opt/airflow/dbt_profiles
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/dbt_profiles:/opt/airflow/dbt_profiles:ro
+      - ./ecommerce_dbt:/opt/airflow/ecommerce_dbt:ro
+      - ./src:/opt/airflow/project/src:ro
+      - ./clickstream_events.jsonl:/opt/airflow/project/clickstream_events.jsonl:ro
+      - ./product_catalog.csv:/opt/airflow/project/product_catalog.csv:ro
+      - airflow_data:/opt/airflow
+    mem_limit: 2500m
+
+volumes:
+  airflow_data:
