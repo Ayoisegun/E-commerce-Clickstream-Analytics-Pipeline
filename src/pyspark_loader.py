@@ -4,7 +4,8 @@ from dotenv import load_dotenv
 import os
 import pandas as pd
 from sqlalchemy import create_engine
-os.environ["HADOOP_HOME"] = "C:\\hadoop"
+if os.name == "nt":  # winutils is only needed on Windows, not in Linux containers
+    os.environ["HADOOP_HOME"] = "C:\\hadoop"
 
 load_dotenv()
 PG_URL = f"jdbc:postgresql://{os.getenv('PG_HOST')}:{os.getenv('PG_PORT')}/{os.getenv('PG_DB')}"

@@ -3,7 +3,8 @@ from pyspark.sql.functions import col, count, when, isnan, isnull
 from pyspark.sql import functions as F
 from pyspark.sql.types import StructType, StructField, StringType, DoubleType, TimestampType
 import os
-os.environ["HADOOP_HOME"] = "C:\\hadoop"
+if os.name == "nt":  # winutils is only needed on Windows, not in Linux containers
+    os.environ["HADOOP_HOME"] = "C:\\hadoop"
 
 def process_clickstream(spark: SparkSession):
     # 1. Define schema and read raw clickstream data
@@ -142,11 +143,12 @@ def process_clickstream(spark: SparkSession):
 
     return updated_df
 
-# Initialize Spark Session with PostgreSQL driver package
-spark = SparkSession.builder \
-    .appName("ecommerce_analytics") \
-    .master("local[*]") \
-    .config("spark.jars.packages", "org.postgresql:postgresql:42.7.3") \
-    .getOrCreate()
-cleaned_df = process_clickstream(spark)
-print(cleaned_df.count())
+if __name__ == "__main__":
+    # Only runs when this file is executed directly, not when load_clickstream.py imports it
+    spark = SparkSession.builder \
+        .appName("ecommerce_analytics") \
+        .master("local[*]") \
+        .config("spark.jars.packages", "org.postgresql:postgresql:42.7.3") \
+        .getOrCreate()
+    cleaned_df = process_clickstream(spark)
+    print(cleaned_df.count())

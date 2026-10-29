@@ -2,7 +2,8 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, count, when, isnan, isnull
 from pyspark.sql import functions as F
 import os
-os.environ["HADOOP_HOME"] = "C:\\hadoop"
+if os.name == "nt":  # winutils is only needed on Windows, not in Linux containers
+    os.environ["HADOOP_HOME"] = "C:\\hadoop"
 from pyspark.sql.types import StructType, StructField, IntegerType, StringType, DoubleType, TimestampType, FloatType, NumericType
 from functools import reduce
 

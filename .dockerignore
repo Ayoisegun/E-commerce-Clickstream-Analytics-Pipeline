@@ -7,3 +7,4 @@ ecommerce_dbt/dbt_packages
 logs
 airflow/logs
 .env
+*.jsonl

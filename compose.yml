@@ -13,13 +13,23 @@ services:
       AIRFLOW__CORE__EXECUTOR: SequentialExecutor
       AIRFLOW__CORE__LOAD_EXAMPLES: "false"
       AIRFLOW__CORE__DAGS_FOLDER: /opt/airflow/dags
-      AIRFLOW__CORE__EXECUTION_API_SERVER_URL: ""
+      AIRFLOW__WEBSERVER__WORKERS: "1"
+      AIRFLOW__SCHEDULER__SCHEDULER_HEALTH_CHECK_THRESHOLD: "180"
+      AIRFLOW__SCHEDULER__DAG_DIR_LIST_INTERVAL: "60"
       PG_HOST: host.docker.internal
       PG_PORT: "${PG_PORT:-5432}"
       PG_DB: "${PG_DB}"
       PG_USER: "${PG_USER}"
       PG_PASSWORD: "${PG_PASSWORD}"
       DBT_PROFILES_DIR: /opt/airflow/dbt_profiles
+      DBT_TARGET_PATH: /opt/airflow/dbt_target
+      DBT_LOG_PATH: /opt/airflow/dbt_logs
+      DBT_SEND_ANONYMOUS_USAGE_STATS: "false"
+      DBT_USE_COLORS: "false"
+      SPARK_MASTER: local[1]
+      SPARK_DRIVER_MEMORY: 512m
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/dbt_profiles:/opt/airflow/dbt_profiles:ro
@@ -28,7 +38,7 @@ services:
       - ./clickstream_events.jsonl:/opt/airflow/project/clickstream_events.jsonl:ro
       - ./product_catalog.csv:/opt/airflow/project/product_catalog.csv:ro
       - airflow_data:/opt/airflow
-    mem_limit: 2500m
+    mem_limit: 3500m
 
 volumes:
   airflow_data:

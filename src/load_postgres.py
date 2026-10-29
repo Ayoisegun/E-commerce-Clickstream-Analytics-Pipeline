@@ -10,7 +10,7 @@ conn = psycopg2.connect(
     dbname=os.getenv("PG_DB"),
     user=os.getenv("PG_USER"),
     password=os.getenv("PG_PASSWORD"),
-    host="127.0.0.1",
+    host=os.getenv("PG_HOST", "127.0.0.1"),
     port=os.getenv("PG_PORT"),
 )
 cursor = conn.cursor()
